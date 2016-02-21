@@ -1,0 +1,11 @@
+# List of fixed seed nodes for main network
+
+# IPv4 nodes
+192.81.208.32
+192.81.208.32:19199
+0x20D051C0
+
+# IPv6 nodes
+
+# Onion nodes
+# bitcoinostk4e4re.onion:8333
