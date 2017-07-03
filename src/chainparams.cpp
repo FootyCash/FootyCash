@@ -83,6 +83,8 @@ public:
         assert(hashGenesisBlock == uint256("0x0000005ec05d79bef930111ff31cc66e8127752a084936e0ff938fea15993241"));
         assert(genesis.hashMerkleRoot == uint256("0x4e448dece2984c7c9312b4d878e8493664375d4b8b9fbdf232094aae71328406"));
 
+        vSeeds.push_back(CDNSSeedData("seed.footycash.com", "seed.footycash.com")); 
+
         base58Prefixes[PUBKEY_ADDRESS] = list_of(30)(101)(250);
         base58Prefixes[SCRIPT_ADDRESS] = list_of(85)(85)(85);
         base58Prefixes[SECRET_KEY] =     list_of(153)(153)(153);
