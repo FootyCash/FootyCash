@@ -85,11 +85,11 @@ public:
 
         vSeeds.push_back(CDNSSeedData("seed.footycash.com", "seed.footycash.com")); 
 
-        base58Prefixes[PUBKEY_ADDRESS] = list_of(30)(101)(250);
-        base58Prefixes[SCRIPT_ADDRESS] = list_of(85)(85)(85);
-        base58Prefixes[SECRET_KEY] =     list_of(153)(153)(153);
-        base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x04)(0x88)(0xB2)(0x1E);
-        base58Prefixes[EXT_SECRET_KEY] = list_of(0x04)(0x88)(0xAD)(0xE4);
+        base58Prefixes[PUBKEY_ADDRESS] = list_of(30)(101)(250).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[SCRIPT_ADDRESS] = list_of(85)(85)(85).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[SECRET_KEY] =     list_of(153)(153)(153).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[EXT_SECRET_KEY] = list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
 
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
@@ -164,11 +164,11 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
 
-        base58Prefixes[PUBKEY_ADDRESS] = list_of(111);
-        base58Prefixes[SCRIPT_ADDRESS] = list_of(196);
-        base58Prefixes[SECRET_KEY]     = list_of(239);
-        base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x04)(0x35)(0x87)(0xCF);
-        base58Prefixes[EXT_SECRET_KEY] = list_of(0x04)(0x35)(0x83)(0x94);
+        base58Prefixes[PUBKEY_ADDRESS] = list_of(111).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[SCRIPT_ADDRESS] = list_of(196).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[SECRET_KEY]     = list_of(239).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[EXT_SECRET_KEY] = list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
 
         convertSeed6(vFixedSeeds, pnSeed6_test, ARRAYLEN(pnSeed6_test));
 
