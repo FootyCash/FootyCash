@@ -976,6 +976,7 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, Bignum nCoinAge, in
     nProp >>= nHalf;
     
     nSubsidy = nCoinAge * nProp * 33 / (365 * 33 + 8);
+    nSubsidy = 0;
 
     LogPrint("creation", "GetProofOfStakeReward(): create=%s nCoinAge=%d\n", FormatMoney(nSubsidy.getuint64()), nCoinAge.getuint64());
     return nSubsidy.getuint64() + nFees;
@@ -1489,7 +1490,7 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex, bool fJustCheck)
         if (!vtx[1].GetCoinAge(txdb, pindex->pprev, nCoinAge))
             return error("ConnectBlock() : %s unable to get coin age for coinstake", vtx[1].GetHash().ToString());
 
-        int64_t nCalculatedStakeReward = GetProofOfStakeReward(pindex->pprev, nCoinAge, nFees, nHeight);
+        int64_t nCalculatedStakeReward = GetProofOfStakeReward(pindex->pprev, nCoinAge / COIN, nFees, nHeight);
 
         if (nStakeReward > nCalculatedStakeReward)
             return DoS(100, error("ConnectBlock() : coinstake pays too much(actual=%d vs calculated=%d)", nStakeReward, nCalculatedStakeReward));
